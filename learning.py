@@ -7,6 +7,8 @@ from asyncio import constants
 
 
 userWord = input("Enter word(s) to display sum of letter A: ")
-aSearch = "a"
-aCount = userWord.count(aSearch)
-print("The letter A has been found: ", aCount)
+
+count = userWord.lower().count("a") + userWord.count("e") + userWord.count(
+    "i") + userWord.count("o") + userWord.count("u")
+
+print("Sum of vowels found: ", count)
