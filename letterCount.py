@@ -10,9 +10,13 @@ count = userWord.lower().count("a") + userWord.count("e") + userWord.count(
 
 count2 = userWord.lower().count("b") + userWord.lower().count("c") \
     + userWord.lower().count("d") + userWord.lower().count("f") \
-    + userWord.lower().count("g") + userWord.lower().count("h") + userWord.lower().count("j") + userWord.lower().count("k") + userWord.lower().count("l") + userWord.lower().count("m") + \
-    userWord.lower().count("n") + userWord.lower().count("p") + userWord.lower().count("q") + userWord.lower().count("r") + userWord.lower().count("s") + userWord.lower().count("t") + \
-    userWord.lower().count("v") + userWord.lower().count("w") + \
-    userWord.lower().count("x") + userWord.lower().count("z")
+    + userWord.lower().count("g") + userWord.lower().count("h") \
+    + userWord.lower().count("j") + userWord.lower().count("k") \
+    + userWord.lower().count("l") + userWord.lower().count("m") \
+    + userWord.lower().count("n") + userWord.lower().count("p") \
+    + userWord.lower().count("q") + userWord.lower().count("r") \
+    + userWord.lower().count("s") + userWord.lower().count("t") \
+    + userWord.lower().count("v") + userWord.lower().count("w") \
+    + userWord.lower().count("x") + userWord.lower().count("z")
 
 print(count, "Vowel(s)", count2, "Consonant(s)")
