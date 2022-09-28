@@ -21,14 +21,14 @@ userInput2 = input("Which measurements would you like to convert to? \
     \n Kilometers \n Meters \n Centimeters \n Please enter 1,2 or 3: ")
 
 
-if userInput == ("1")
-print(userInput2)
+if userInput == ("1"):
+    print(userInput2)
 
-if userInput == ("2")
-print(userInput2)
+elif userInput == ("2"):
+    print(userInput2)
 
-if userInput == ("3")
-print(userInput2)
+elif userInput == ("3"):
+    print(userInput2)
 
-if userInput == ("4")
-print(userInput2)
+elif userInput == ("4"):
+    print(userInput2)
