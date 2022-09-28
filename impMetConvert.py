@@ -14,21 +14,19 @@
 # 1609.344  M
 # 160934 CM
 
-userInput = input("Which measurements would you like to convert? \
-    \n 1 Miles \n 2 Yards \n 3 Feet \n 4 Inches \n Please enter 1,2,3 or 4: ")
 
-userInput2 = input("Which measurements would you like to convert to? \
-    \n Kilometers \n Meters \n Centimeters \n Please enter 1,2 or 3: ")
+miles = float(input("Enter value of Miles: "))
 
+yards = float(input("Enter value of yards: "))
 
-if userInput == ("1"):
-    print(userInput2)
+feet = float(input("Enter value of feet: "))
 
-elif userInput == ("2"):
-    print(userInput2)
+inches = float(input("Enter value of inches: "))
 
-elif userInput == ("3"):
-    print(userInput2)
+kilometers = miles * 1.609344
 
-elif userInput == ("4"):
-    print(userInput2)
+meters = yards * 0.9144
+
+centimenters = inches * 2.54
+
+print(kilometers, "Kilometers", meters, "Meters", centimenters, "Centimeters")
