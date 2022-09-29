@@ -14,31 +14,22 @@
 # the program should take all the inputs from the user and then display the price for the custom desk.
 
 
-from operator import le
+length = float(input("How many inches is the desired LENGTH of your desk?: "))
 
+width = float(input("How many inches is the desired WIDTH of your desk?: "))
 
-length = input("How many inches is the desired LENGTH of your desk?: ")
+woodType = int(input("Mahogany 150\nOak 125\nPine 0\nEnter price: "))
 
-width = input("How many inches is the desired WIDTH of your desk?: ")
-
-woodType = input("Mahogany, Oak or Pine?: ")
-
-drawerCount = input("How many drawers would you lile?: ")
+drawerCount = int(input("How many drawers would you like?: "))
 
 minimumCost = 200
 
-drawers = 30
+drawerCost = drawerCount * 30
 
-mahogany = 150
+cost = minimumCost + drawerCost + woodType
 
-oak = 125
+if length * width >= 750:
+    cost = minimumCost + drawerCost + woodType + 50
 
-pine = 0
 
-drawers = 30
-
-largeSurface = length * width
-
-cost =
-
-print()
+print("Your desk will cost", cost)
