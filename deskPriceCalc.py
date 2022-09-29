@@ -16,12 +16,28 @@
 
 length = float(input("How many inches is the desired LENGTH of your desk?: "))
 
-width = float(input("\nAn additional cost of $50 will apply if your desk is greater than 750 sqaure inches.\nHow many inches is the desired WIDTH of your desk?: "))
+width = float(input("\nAn additional cost of $50 will apply if your desk is greater than 750 sqaure inches.\
+    \nHow many inches is the desired WIDTH of your desk?: "))
 
-woodType = int(input("Mahogany is an additional $150\
+woodType = input("Mahogany is an additional $150\
         \nOak is an additional $125\
         \nPine is included for $0\
-        \nEnter price: "))
+        \nWhich wood type would you like?: ")
+
+mahogany = 150
+
+oak = 125
+
+pine = 0
+
+if woodType == "mahogany":
+    woodType = mahogany
+
+elif woodType == "oak":
+    woodType = oak
+
+elif woodType == "pine":
+    woodType = pine
 
 drawerCount = int(input("How many drawers would you like?: "))
 
