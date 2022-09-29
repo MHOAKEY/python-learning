@@ -24,7 +24,9 @@ kilometer = totalCM / 100_000
 
 meter = 1000 * (kilometer - int(kilometer))
 
-centimenter = 100 * (meter - int(meter))
+centimeter = 100 * (meter - int(meter))
+
+milimeter = 10 * (centimeter - int(centimeter))
 
 print(int(kilometer), "kilometers", int(meter),
-      "Meters", int(centimenter), "Centimeters")
+      "Meters", int(centimeter), "Centimeters", float(milimeter), "Milimeters")
