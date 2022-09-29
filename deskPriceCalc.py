@@ -16,6 +16,8 @@
 MAHOGANY = 150
 OAK = 125
 PINE = 0
+MINIMUMCOST = 200
+
 
 length = float(input("How many inches is the desired LENGTH of your desk?: "))
 
@@ -29,6 +31,8 @@ woodType = input("Mahogany is an additional $150\
 
 woodType = woodType.lower()
 
+drawerCount = int(input("How many drawers would you like?: "))
+
 if woodType == "mahogany":
     woodType = MAHOGANY
 
@@ -38,15 +42,11 @@ elif woodType == "oak":
 elif woodType == "pine":
     woodType = PINE
 
-drawerCount = int(input("How many drawers would you like?: "))
-
-minimumCost = 200
-
 drawerCost = drawerCount * 30
 
-cost = minimumCost + drawerCost + woodType
+cost = MINIMUMCOST + drawerCost + woodType
 
 if length * width >= 750:
-    cost = minimumCost + drawerCost + woodType + 50
+    cost = MINIMUMCOST + drawerCost + woodType + 50
 
 print("Your desk will cost", cost)
