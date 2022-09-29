@@ -12,3 +12,33 @@
 # Drawers cost $30 each
 
 # the program should take all the inputs from the user and then display the price for the custom desk.
+
+
+from operator import le
+
+
+length = input("How many inches is the desired LENGTH of your desk?: ")
+
+width = input("How many inches is the desired WIDTH of your desk?: ")
+
+woodType = input("Mahogany, Oak or Pine?: ")
+
+drawerCount = input("How many drawers would you lile?: ")
+
+minimumCost = 200
+
+drawers = 30
+
+mahogany = 150
+
+oak = 125
+
+pine = 0
+
+drawers = 30
+
+largeSurface = length * width
+
+cost =
+
+print()
