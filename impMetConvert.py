@@ -9,11 +9,6 @@
 # meters
 # centimeters
 
-# 1 Mile =
-# 1.609344 KM
-# 1609.344  M
-# 160934 CM
-
 
 miles = float(input("Enter value of Miles: "))
 
@@ -23,10 +18,13 @@ feet = float(input("Enter value of feet: "))
 
 inches = float(input("Enter value of inches: "))
 
-kilometers = miles * 1.609344
+totalCM = (miles * 160934) + (yards * 91.44) + (feet * 30.48) + (inches * 2.54)
 
-meters = yards * 0.9144
+kilometer = totalCM / 100_000
 
-centimenters = inches * 2.54
+meter = 1000 * (kilometer - int(kilometer))
 
-print(kilometers, "Kilometers", meters, "Meters", centimenters, "Centimeters")
+centimenter = 100 * (meter - int(meter))
+
+print(int(kilometer), "kilometers", int(meter),
+      "Meters", int(centimenter), "Centimeters")
