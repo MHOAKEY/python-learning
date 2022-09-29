@@ -16,9 +16,12 @@
 
 length = float(input("How many inches is the desired LENGTH of your desk?: "))
 
-width = float(input("How many inches is the desired WIDTH of your desk?: "))
+width = float(input("\nAn additional cost of $50 will apply if your desk is greater than 750 sqaure inches.\nHow many inches is the desired WIDTH of your desk?: "))
 
-woodType = int(input("Mahogany 150\nOak 125\nPine 0\nEnter price: "))
+woodType = int(input("Mahogany is an additional $150\
+        \nOak is an additional $125\
+        \nPine is included for $0\
+        \nEnter price: "))
 
 drawerCount = int(input("How many drawers would you like?: "))
 
@@ -30,6 +33,5 @@ cost = minimumCost + drawerCost + woodType
 
 if length * width >= 750:
     cost = minimumCost + drawerCost + woodType + 50
-
 
 print("Your desk will cost", cost)
