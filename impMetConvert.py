@@ -29,4 +29,4 @@ centimeter = 100 * (meter - int(meter))
 milimeter = 10 * (centimeter - int(centimeter))
 
 print(int(kilometer), "kilometers", int(meter),
-      "Meters", int(centimeter), "Centimeters", float(milimeter), "Milimeters")
+      "Meters", int(centimeter), "Centimeters", int(milimeter), "Milimeters")
