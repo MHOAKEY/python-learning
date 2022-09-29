@@ -13,10 +13,13 @@
 
 # the program should take all the inputs from the user and then display the price for the custom desk.
 
+MAHOGANY = 150
+OAK = 125
+PINE = 0
 
 length = float(input("How many inches is the desired LENGTH of your desk?: "))
 
-width = float(input("\nAn additional cost of $50 will apply if your desk is greater than 750 sqaure inches.\
+width = float(input("\nAn additional cost of $50 will apply if your desk is greater than \n750 sqaure inches.\
     \nHow many inches is the desired WIDTH of your desk?: "))
 
 woodType = input("Mahogany is an additional $150\
@@ -24,20 +27,16 @@ woodType = input("Mahogany is an additional $150\
         \nPine is included for $0\
         \nWhich wood type would you like?: ")
 
-mahogany = 150
-
-oak = 125
-
-pine = 0
+woodType = woodType.lower()
 
 if woodType == "mahogany":
-    woodType = mahogany
+    woodType = MAHOGANY
 
 elif woodType == "oak":
-    woodType = oak
+    woodType = OAK
 
 elif woodType == "pine":
-    woodType = pine
+    woodType = PINE
 
 drawerCount = int(input("How many drawers would you like?: "))
 
