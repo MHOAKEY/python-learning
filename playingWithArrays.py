@@ -18,6 +18,8 @@ userNum4 = input("Enter number: ")
 
 userNum5 = input("Enter number: ")
 
-userNumArray = [userNum5, userNum4, userNum3, userNum2, userNum1]
+userNumArray = [userNum1, userNum2, userNum3, userNum4, userNum5]
 
-print(userNumArray)
+reverseArray = userNumArray[::-1]
+
+print(reverseArray)
