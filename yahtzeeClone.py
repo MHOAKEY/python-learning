@@ -12,3 +12,8 @@
 # One Pair
 
 # and display to the user the best combination they have rolled.
+
+import random
+
+for x in range(6):
+    print(random.randrange(1, 6))
