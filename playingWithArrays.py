@@ -8,6 +8,9 @@
 
 # The program will then find and print out all numbers greater than the average
 
+import re
+
+
 userNum1 = int(input("Enter number: "))
 
 userNum2 = int(input("Enter number: "))
@@ -28,17 +31,21 @@ print(reverseArray)
 
 print("the average of these numbers is: ", int(averageOfArray))
 
-if userNumArray[0] > averageOfArray:
-    print("Unit greater than average: ", userNumArray[0])
+for x in userNumArray:
+    if x > averageOfArray:
+        print("Unit greater than average: ", x)
 
-if userNumArray[1] > averageOfArray:
-    print("Unit greater than average: ", userNumArray[1])
+# if userNumArray[0] > averageOfArray:
+#     print("Unit greater than average: ", userNumArray[0])
 
-if userNumArray[2] > averageOfArray:
-    print("Unit greater than average: ", userNumArray[2])
+# if userNumArray[1] > averageOfArray:
+#     print("Unit greater than average: ", userNumArray[1])
 
-if userNumArray[3] > averageOfArray:
-    print("Unit greater than average: ", userNumArray[3])
+# if userNumArray[2] > averageOfArray:
+#     print("Unit greater than average: ", userNumArray[2])
 
-if userNumArray[4] > averageOfArray:
-    print("Unit greater than average: ", userNumArray[4])
+# if userNumArray[3] > averageOfArray:
+#     print("Unit greater than average: ", userNumArray[3])
+
+# if userNumArray[4] > averageOfArray:
+#     print("Unit greater than average: ", userNumArray[4])
