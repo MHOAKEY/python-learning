@@ -1,7 +1,9 @@
 # Build a Yahtzee game clone
 
-# Game will roll 6 dice (generate 6 random numbers between 1-6)
+# Game will roll 5 dice (generate 5 random numbers between 1-6)
+
 # Game will then figure out best possible combination:
+
 # Yahtzee
 # Full House
 # Large Straight
@@ -15,5 +17,9 @@
 
 import random
 
-for x in range(6):
-    print(random.randrange(1, 6))
+diceArray = []
+
+for x in range(5):
+    diceArray.append(random.randrange(1, 6))
+
+print(diceArray)
