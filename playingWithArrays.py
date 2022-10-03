@@ -22,8 +22,8 @@ userNumArray = [userNum1, userNum2, userNum3, userNum4, userNum5]
 
 reverseArray = userNumArray[::-1]
 
-sumOfArray = sum(userNumArray)
+averageOfArray = sum(userNumArray) / len(userNumArray)
 
 print(reverseArray)
 
-print("The sum of this array is: ", sumOfArray)
+print("the average of these numbers is: ", averageOfArray)
