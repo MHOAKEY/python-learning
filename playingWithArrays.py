@@ -26,4 +26,19 @@ averageOfArray = sum(userNumArray) / len(userNumArray)
 
 print(reverseArray)
 
-print("the average of these numbers is: ", averageOfArray)
+print("the average of these numbers is: ", int(averageOfArray))
+
+if userNumArray[0] > averageOfArray:
+    print("Unit greater than average: ", userNumArray[0])
+
+if userNumArray[1] > averageOfArray:
+    print("Unit greater than average: ", userNumArray[1])
+
+if userNumArray[2] > averageOfArray:
+    print("Unit greater than average: ", userNumArray[2])
+
+if userNumArray[3] > averageOfArray:
+    print("Unit greater than average: ", userNumArray[3])
+
+if userNumArray[4] > averageOfArray:
+    print("Unit greater than average: ", userNumArray[4])
