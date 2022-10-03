@@ -31,7 +31,7 @@ averageOfArray = sum(userNumArray) / len(userNumArray)
 
 print(reverseArray)
 
-print("the average of these numbers is: ", int(averageOfArray))
+print("the average of these numbers is: ", float(averageOfArray))
 
 for x in userNumArray:
     if x > averageOfArray:
