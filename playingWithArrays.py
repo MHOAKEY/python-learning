@@ -23,7 +23,7 @@ userNum5 = int(input("Enter number: "))
 
 userNumArray = [userNum1, userNum2, userNum3, userNum4, userNum5]
 
-userNumArray.append(int(input("Enter number: ")))
+# userNumArray.append(int(input("Enter number: ")))
 
 reverseArray = userNumArray[::-1]
 
