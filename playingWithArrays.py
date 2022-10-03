@@ -8,18 +8,22 @@
 
 # The program will then find and print out all numbers greater than the average
 
-userNum1 = input("Enter number: ")
+userNum1 = int(input("Enter number: "))
 
-userNum2 = input("Enter number: ")
+userNum2 = int(input("Enter number: "))
 
-userNum3 = input("Enter number: ")
+userNum3 = int(input("Enter number: "))
 
-userNum4 = input("Enter number: ")
+userNum4 = int(input("Enter number: "))
 
-userNum5 = input("Enter number: ")
+userNum5 = int(input("Enter number: "))
 
 userNumArray = [userNum1, userNum2, userNum3, userNum4, userNum5]
 
 reverseArray = userNumArray[::-1]
 
+sumOfArray = sum(userNumArray)
+
 print(reverseArray)
+
+print("The sum of this array is: ", sumOfArray)
