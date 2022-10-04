@@ -25,16 +25,21 @@ for x in range(5):
     diceArray.append(random.randrange(1, 6))
 
 
-def checkOnePair(diceArray):
-    sorted(diceArray)
-    if (diceArray[0] == diceArray[1]) or (diceArray[1] == diceArray[2]) or (diceArray[2] == diceArray[3]) or (diceArray[3] == diceArray[4]) or (diceArray[4] == diceArray[5]):
+def checkDice(diceArray):
+    diceArray.sort()
+    if diceArray[0] == diceArray[1] and diceArray[2] == diceArray[3] \
+        or diceArray[0] == diceArray[1] and diceArray[3] == diceArray[4] \
+            or diceArray[1] == diceArray[2] and diceArray[3] == diceArray[4]:
+        return "You have 2 pairs"
+    if diceArray[0] == diceArray[1] or diceArray[1] == diceArray[2] \
+            or diceArray[2] == diceArray[3] or diceArray[3] == diceArray[4]:
         return "You have 1 pair"
     else:
         return "No Pairs"
 
 
-print(diceArray)
+print("Dice Rolled: ", diceArray)
 print("")
-print(sorted(diceArray))
+print("Dice sorted: ", sorted(diceArray))
 print("")
-print(checkOnePair)
+print("You have: ", checkDice(diceArray))
