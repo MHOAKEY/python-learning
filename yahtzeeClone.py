@@ -23,3 +23,5 @@ for x in range(5):
     diceArray.append(random.randrange(1, 6))
 
 print(diceArray)
+print("")
+print(sorted(diceArray))
