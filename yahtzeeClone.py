@@ -16,7 +16,6 @@
 # and display to the user the best combination they have rolled.
 
 import random
-from re import I
 
 
 diceArray = []
