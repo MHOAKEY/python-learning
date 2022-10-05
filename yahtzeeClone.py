@@ -16,6 +16,7 @@
 # and display to the user the best combination they have rolled.
 
 import random
+from re import I
 
 
 diceArray = []
@@ -27,6 +28,17 @@ for x in range(5):
 
 def checkDice(diceArray):
     diceArray.sort()
+    if diceArray[1] == diceArray[4]:
+        return "Yahztee!"
+    if diceArray[0] == diceArray[1] and diceArray[0] != diceArray[2] and diceArray[2] == diceArray[4] \
+            or diceArray[0] == diceArray[2] and diceArray[0] != diceArray[3] and diceArray[3] == diceArray[4]:
+        return "Full house"
+    if diceArray[0] == 2 and diceArray[1] == 3 and diceArray[2] == 4 \
+            and diceArray[3] == 5 and diceArray[4] == 6:
+        return "Large straight"
+    if diceArray[0] == 1 and diceArray[1] == 2 and diceArray[2] == 3 \
+            and diceArray[3] == 4 and diceArray[4] == 5:
+        return "Small straight"
     if diceArray[0] == diceArray[3] \
             or diceArray[1] == diceArray[4]:
         return "4 of a kind"
