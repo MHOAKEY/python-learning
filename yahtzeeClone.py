@@ -30,12 +30,12 @@ def checkDice(diceArray):
     if diceArray[0] == diceArray[1] and diceArray[2] == diceArray[3] \
         or diceArray[0] == diceArray[1] and diceArray[3] == diceArray[4] \
             or diceArray[1] == diceArray[2] and diceArray[3] == diceArray[4]:
-        return "You have 2 pairs"
+        return "2 pairs"
     if diceArray[0] == diceArray[1] or diceArray[1] == diceArray[2] \
             or diceArray[2] == diceArray[3] or diceArray[3] == diceArray[4]:
-        return "You have 1 pair"
+        return "1 pair"
     else:
-        return "No Pairs"
+        return "Chance?"
 
 
 print("Dice Rolled: ", diceArray)
