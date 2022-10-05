@@ -27,6 +27,13 @@ for x in range(5):
 
 def checkDice(diceArray):
     diceArray.sort()
+    if diceArray[0] == diceArray[3] \
+            or diceArray[1] == diceArray[4]:
+        return "4 of a kind"
+    if diceArray[0] == diceArray[2] \
+        or diceArray[1] == diceArray[3] \
+            or diceArray[2] == diceArray[4]:
+        return "3 of a kind"
     if diceArray[0] == diceArray[1] and diceArray[2] == diceArray[3] \
         or diceArray[0] == diceArray[1] and diceArray[3] == diceArray[4] \
             or diceArray[1] == diceArray[2] and diceArray[3] == diceArray[4]:
@@ -42,4 +49,4 @@ print("Dice Rolled: ", diceArray)
 print("")
 print("Dice sorted: ", sorted(diceArray))
 print("")
-print("You have: ", checkDice(diceArray))
+print("You have:     ", checkDice(diceArray))
