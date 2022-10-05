@@ -49,6 +49,11 @@ def checkDice(diceArray):
 
 print("Dice Rolled: ", diceArray)
 print("")
-print("Dice sorted: ", sorted(diceArray))
+
+
+diceArray.sort()
+
+
+print("Dice sorted: ", diceArray)
 print("")
 print("You have:     ", checkDice(diceArray))
