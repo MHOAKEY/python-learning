@@ -60,18 +60,34 @@ def displayBoard():
 def checkPlay(userMove, userGamePiece):
     if userMove == ("11"):
         gameBoard[0] = userGamePiece
+    if userMove == ("12"):
+        gameBoard[1] = userGamePiece
+    if userMove == ("13"):
+        gameBoard[2] = userGamePiece
+    if userMove == ("21"):
+        gameBoard[3] = userGamePiece
+    if userMove == ("22"):
+        gameBoard[4] = userGamePiece
+    if userMove == ("23"):
+        gameBoard[5] = userGamePiece
+    if userMove == ("31"):
+        gameBoard[6] = userGamePiece
+    if userMove == ("32"):
+        gameBoard[7] = userGamePiece
+    if userMove == ("33"):
+        gameBoard[8] = userGamePiece
 
 
 print("\n     TicTacToe")
 displayBoard()
 
+for x in range(9):
+    userX = input("User X. Enter numbers for desired row and column: ")
 
-userX = input("User X. Enter numbers for desired row and column: ")
+    checkPlay(userX, " X")
+    displayBoard()
 
-checkPlay(userX, " X")
-displayBoard()
+    userO = input("User O. Enter numbers for desired row and column: ")
 
-userO = input("User O. Enter numbers for desired row and column: ")
-
-checkPlay(userO, " O")
-displayBoard()
+    checkPlay(userO, " O")
+    displayBoard()
