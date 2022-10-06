@@ -11,4 +11,42 @@
 # - Add ability to start over after game is finished without having to run the program again
 # - Make the game have an Ai that can play a single human player
 
-# test
+
+# game board displays as 3x3 grid
+# store data for 9 positions of the game board
+# gather user input that translates into a change in a position of the game board
+# check for a win after 5 user inputs and thereafter
+
+
+# area1 = ("-")
+# area2 = ("-")
+# area3 = ("-")
+# area4 = ("-")
+# area5 = ("-")
+# area6 = ("-")
+# area7 = ("-")
+# area8 = ("-")
+# area9 = ("-")
+
+# gameBoard = [area1, area2, area3, area4, area5, area6, area7, area8, area9]
+
+# for x in gameBoard:
+#     print(gameBoard)
+
+
+# # print("\n", area1, area2, area3,
+# #       "\n", area4, area5, area6,
+# #       "\n", area7, area8, area9,)
+
+
+# # userX = input("User X enter row and column: ")
+# # if userX = "11":
+
+gameBoard = []
+
+for x in range(9):
+    gameBoard.append("[]")
+
+print("\n", gameBoard[0:3],
+      "\n", gameBoard[3:6],
+      "\n", gameBoard[6:10])
