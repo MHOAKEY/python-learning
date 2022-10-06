@@ -47,47 +47,47 @@ gameBoard = []
 
 
 for x in range(9):
-    gameBoard.append("[]")
+    gameBoard.append("[ ]")
 
 
 def displayBoard():
-    print("\n", gameBoard[0:3],
-          "\n", gameBoard[3:6],
-          "\n", gameBoard[6:10],
+    print("\n", gameBoard[0:3], "     ", [1, 2, 3],
+          "\n", gameBoard[3:6], "     ", [4, 5, 6],
+          "\n", gameBoard[6:10], "     ", [7, 8, 9],
           "\n")
 
 
 def checkPlay(userMove, userGamePiece):
-    if userMove == ("11"):
+    if userMove == ("1"):
         gameBoard[0] = userGamePiece
-    if userMove == ("12"):
+    if userMove == ("2"):
         gameBoard[1] = userGamePiece
-    if userMove == ("13"):
+    if userMove == ("3"):
         gameBoard[2] = userGamePiece
-    if userMove == ("21"):
+    if userMove == ("4"):
         gameBoard[3] = userGamePiece
-    if userMove == ("22"):
+    if userMove == ("5"):
         gameBoard[4] = userGamePiece
-    if userMove == ("23"):
+    if userMove == ("6"):
         gameBoard[5] = userGamePiece
-    if userMove == ("31"):
+    if userMove == ("7"):
         gameBoard[6] = userGamePiece
-    if userMove == ("32"):
+    if userMove == ("8"):
         gameBoard[7] = userGamePiece
-    if userMove == ("33"):
+    if userMove == ("9"):
         gameBoard[8] = userGamePiece
 
 
 print("\n     TicTacToe")
 displayBoard()
 
-for x in range(9):
-    userX = input("User X. Enter numbers for desired row and column: ")
+for x in range(5):
+    userX = input("User X. Enter position number: ")
 
-    checkPlay(userX, " X")
+    checkPlay(userX, " X ")
     displayBoard()
 
-    userO = input("User O. Enter numbers for desired row and column: ")
+    userO = input("User O. Enter position number: ")
 
-    checkPlay(userO, " O")
+    checkPlay(userO, " O ")
     displayBoard()
