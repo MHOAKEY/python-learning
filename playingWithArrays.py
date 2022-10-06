@@ -8,8 +8,6 @@
 
 # The program will then find and print out all numbers greater than the average
 
-import re
-
 
 userNum1 = int(input("Enter number: "))
 
