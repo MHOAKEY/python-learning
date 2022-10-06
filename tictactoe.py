@@ -52,7 +52,9 @@ for x in range(9):
 def displayBoard():
     print("\n", gameBoard[0:3],
           "\n", gameBoard[3:6],
-          "\n", gameBoard[6:10])
+          "\n", gameBoard[6:10],
+          "\n")
 
 
+print("\n     TicTacToe")
 displayBoard()
