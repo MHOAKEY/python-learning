@@ -42,6 +42,7 @@
 # # userX = input("User X enter row and column: ")
 # # if userX = "11":
 
+
 gameBoard = []
 
 
@@ -56,5 +57,21 @@ def displayBoard():
           "\n")
 
 
+def checkPlay(userMove, userGamePiece):
+    if userMove == ("11"):
+        gameBoard[0] = userGamePiece
+
+
 print("\n     TicTacToe")
+displayBoard()
+
+
+userX = input("User X. Enter numbers for desired row and column: ")
+
+checkPlay(userX, " X")
+displayBoard()
+
+userO = input("User O. Enter numbers for desired row and column: ")
+
+checkPlay(userO, " O")
 displayBoard()
