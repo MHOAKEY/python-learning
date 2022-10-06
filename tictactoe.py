@@ -44,9 +44,15 @@
 
 gameBoard = []
 
+
 for x in range(9):
     gameBoard.append("[]")
 
-print("\n", gameBoard[0:3],
-      "\n", gameBoard[3:6],
-      "\n", gameBoard[6:10])
+
+def displayBoard():
+    print("\n", gameBoard[0:3],
+          "\n", gameBoard[3:6],
+          "\n", gameBoard[6:10])
+
+
+displayBoard()
