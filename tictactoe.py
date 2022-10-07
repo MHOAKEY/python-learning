@@ -43,11 +43,17 @@
 # # if userX = "11":
 
 
+DEFAULTSPACE = "[ ]"
+XGAMEPIECE = " X "
+OGAMEPIECE = " O "
+WINMESSAGE = "\n        Victory!"
+
+
 gameBoard = []
+playerWin = False
 
-
-for x in range(9):
-    gameBoard.append("[ ]")
+for _ in range(9):
+    gameBoard.append(DEFAULTSPACE)
 
 
 def displayBoard():
@@ -78,16 +84,53 @@ def checkPlay(userMove, userGamePiece):
         gameBoard[8] = userGamePiece
 
 
-print("\n     TicTacToe")
+def checkWin(gameBoard):
+    if gameBoard[0] == gameBoard[1] == gameBoard[2] and gameBoard[0] != DEFAULTSPACE:
+        print(WINMESSAGE)
+        return True
+    if gameBoard[3] == gameBoard[4] == gameBoard[5] and gameBoard[3] != DEFAULTSPACE:
+        print(WINMESSAGE)
+        return True
+    if gameBoard[6] == gameBoard[7] == gameBoard[8] and gameBoard[6] != DEFAULTSPACE:
+        print(WINMESSAGE)
+        return True
+    if gameBoard[1] == gameBoard[4] == gameBoard[7] and gameBoard[1] != DEFAULTSPACE:
+        print(WINMESSAGE)
+        return True
+    if gameBoard[2] == gameBoard[5] == gameBoard[8] and gameBoard[2] != DEFAULTSPACE:
+        print(WINMESSAGE)
+        return True
+    if gameBoard[3] == gameBoard[6] == gameBoard[8] and gameBoard[3] != DEFAULTSPACE:
+        print(WINMESSAGE)
+        return True
+    if gameBoard[1] == gameBoard[5] == gameBoard[8] and gameBoard[1] != DEFAULTSPACE:
+        print(WINMESSAGE)
+        return True
+    if gameBoard[7] == gameBoard[5] == gameBoard[3] and gameBoard[7] != DEFAULTSPACE:
+        print(WINMESSAGE)
+        return True
+    else:
+        return False
+
+
+print("\n      Tic Tac Toe")
 displayBoard()
 
-for x in range(5):
+while playerWin is False:
     userX = input("User X. Enter position number: ")
 
-    checkPlay(userX, " X ")
+    checkPlay(userX, XGAMEPIECE)
+    playerWin = checkWin(gameBoard)
+    displayBoard()
+
+    if playerWin is True:
+        break
     displayBoard()
 
     userO = input("User O. Enter position number: ")
 
-    checkPlay(userO, " O ")
+    checkPlay(userO, OGAMEPIECE)
+    playerWin = checkWin(gameBoard)
     displayBoard()
+    if playerWin is True:
+        break
