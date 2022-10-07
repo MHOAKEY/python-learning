@@ -122,10 +122,8 @@ while playerWin is False:
     checkPlay(userX, XGAMEPIECE)
     playerWin = checkWin(gameBoard)
     displayBoard()
-
     if playerWin is True:
         break
-    displayBoard()
 
     userO = input("User O. Enter position number: ")
 
