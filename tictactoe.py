@@ -15,7 +15,7 @@
 # game board displays as 3x3 grid
 # store data for 9 positions of the game board
 # gather user input that translates into a change in a position of the game board
-# check for a win after 5 user inputs and thereafter
+# check for a win
 
 
 # area1 = ("-")
@@ -43,92 +43,88 @@
 # # if userX = "11":
 
 
-DEFAULTSPACE = "[ ]"
-XGAMEPIECE = " X "
-OGAMEPIECE = " O "
-WINMESSAGE = "\n        Victory!"
+while True:
+    DEFAULTSPACE = "[ ]"
+    XGAMEPIECE = " X "
+    OGAMEPIECE = " O "
+    WINMESSAGE = "\n        Victory!"
 
+    gameBoard = []
+    playerWin = False
 
-gameBoard = []
-playerWin = False
+    for _ in range(9):
+        gameBoard.append(DEFAULTSPACE)
 
-for _ in range(9):
-    gameBoard.append(DEFAULTSPACE)
+    def displayBoard():
+        print("\n", gameBoard[0:3], "     ", [1, 2, 3],
+              "\n", gameBoard[3:6], "     ", [4, 5, 6],
+              "\n", gameBoard[6:10], "     ", [7, 8, 9],
+              "\n")
 
+    def checkPlay(userMove, userGamePiece):
+        if userMove == ("1"):
+            gameBoard[0] = userGamePiece
+        if userMove == ("2"):
+            gameBoard[1] = userGamePiece
+        if userMove == ("3"):
+            gameBoard[2] = userGamePiece
+        if userMove == ("4"):
+            gameBoard[3] = userGamePiece
+        if userMove == ("5"):
+            gameBoard[4] = userGamePiece
+        if userMove == ("6"):
+            gameBoard[5] = userGamePiece
+        if userMove == ("7"):
+            gameBoard[6] = userGamePiece
+        if userMove == ("8"):
+            gameBoard[7] = userGamePiece
+        if userMove == ("9"):
+            gameBoard[8] = userGamePiece
 
-def displayBoard():
-    print("\n", gameBoard[0:3], "     ", [1, 2, 3],
-          "\n", gameBoard[3:6], "     ", [4, 5, 6],
-          "\n", gameBoard[6:10], "     ", [7, 8, 9],
-          "\n")
+    def checkWin(gameBoard):
+        if gameBoard[0] == gameBoard[1] == gameBoard[2] and gameBoard[0] != DEFAULTSPACE:
+            print(WINMESSAGE)
+            return True
+        if gameBoard[3] == gameBoard[4] == gameBoard[5] and gameBoard[3] != DEFAULTSPACE:
+            print(WINMESSAGE)
+            return True
+        if gameBoard[6] == gameBoard[7] == gameBoard[8] and gameBoard[6] != DEFAULTSPACE:
+            print(WINMESSAGE)
+            return True
+        if gameBoard[1] == gameBoard[4] == gameBoard[7] and gameBoard[1] != DEFAULTSPACE:
+            print(WINMESSAGE)
+            return True
+        if gameBoard[2] == gameBoard[5] == gameBoard[8] and gameBoard[2] != DEFAULTSPACE:
+            print(WINMESSAGE)
+            return True
+        if gameBoard[3] == gameBoard[6] == gameBoard[8] and gameBoard[3] != DEFAULTSPACE:
+            print(WINMESSAGE)
+            return True
+        if gameBoard[1] == gameBoard[5] == gameBoard[8] and gameBoard[1] != DEFAULTSPACE:
+            print(WINMESSAGE)
+            return True
+        if gameBoard[7] == gameBoard[5] == gameBoard[3] and gameBoard[7] != DEFAULTSPACE:
+            print(WINMESSAGE)
+            return True
+        else:
+            return False
 
-
-def checkPlay(userMove, userGamePiece):
-    if userMove == ("1"):
-        gameBoard[0] = userGamePiece
-    if userMove == ("2"):
-        gameBoard[1] = userGamePiece
-    if userMove == ("3"):
-        gameBoard[2] = userGamePiece
-    if userMove == ("4"):
-        gameBoard[3] = userGamePiece
-    if userMove == ("5"):
-        gameBoard[4] = userGamePiece
-    if userMove == ("6"):
-        gameBoard[5] = userGamePiece
-    if userMove == ("7"):
-        gameBoard[6] = userGamePiece
-    if userMove == ("8"):
-        gameBoard[7] = userGamePiece
-    if userMove == ("9"):
-        gameBoard[8] = userGamePiece
-
-
-def checkWin(gameBoard):
-    if gameBoard[0] == gameBoard[1] == gameBoard[2] and gameBoard[0] != DEFAULTSPACE:
-        print(WINMESSAGE)
-        return True
-    if gameBoard[3] == gameBoard[4] == gameBoard[5] and gameBoard[3] != DEFAULTSPACE:
-        print(WINMESSAGE)
-        return True
-    if gameBoard[6] == gameBoard[7] == gameBoard[8] and gameBoard[6] != DEFAULTSPACE:
-        print(WINMESSAGE)
-        return True
-    if gameBoard[1] == gameBoard[4] == gameBoard[7] and gameBoard[1] != DEFAULTSPACE:
-        print(WINMESSAGE)
-        return True
-    if gameBoard[2] == gameBoard[5] == gameBoard[8] and gameBoard[2] != DEFAULTSPACE:
-        print(WINMESSAGE)
-        return True
-    if gameBoard[3] == gameBoard[6] == gameBoard[8] and gameBoard[3] != DEFAULTSPACE:
-        print(WINMESSAGE)
-        return True
-    if gameBoard[1] == gameBoard[5] == gameBoard[8] and gameBoard[1] != DEFAULTSPACE:
-        print(WINMESSAGE)
-        return True
-    if gameBoard[7] == gameBoard[5] == gameBoard[3] and gameBoard[7] != DEFAULTSPACE:
-        print(WINMESSAGE)
-        return True
-    else:
-        return False
-
-
-print("\n      Tic Tac Toe")
-displayBoard()
-
-while playerWin is False:
-    userX = input("User X. Enter position number: ")
-
-    checkPlay(userX, XGAMEPIECE)
-    playerWin = checkWin(gameBoard)
+    print("\n      Tic Tac Toe")
     displayBoard()
-    if playerWin is True:
-        break
 
-    userO = input("User O. Enter position number: ")
+    while playerWin is False:
+        userX = input("User X. Enter position number: ")
 
-    checkPlay(userO, OGAMEPIECE)
-    playerWin = checkWin(gameBoard)
-    displayBoard()
-    if playerWin is True:
-        break
+        checkPlay(userX, XGAMEPIECE)
+        playerWin = checkWin(gameBoard)
+        displayBoard()
+        if playerWin is True:
+            break
+
+        userO = input("User O. Enter position number: ")
+
+        checkPlay(userO, OGAMEPIECE)
+        playerWin = checkWin(gameBoard)
+        displayBoard()
+        if playerWin is True:
+            break
