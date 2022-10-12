@@ -113,11 +113,11 @@ def checkWin(gameBoard):
 
 
 def aiMove():
-    if gameBoard[0] == XGAMEPIECE:
+    if gameBoard[4] != XGAMEPIECE:
         gameBoard[4] = OGAMEPIECE
 
 
-def game():
+def game1():
     playerWin = False
     while playerWin is False:
         userX = input("User X. Enter position number: ")
@@ -159,5 +159,8 @@ def game2():
 
 print("\n      Tic Tac Toe")
 displayBoard()
-# game()
-game2()
+gameType = input("(1) player or (2) player? Enter number: ")
+if gameType == "2":
+    game1()
+else:
+    game2()
