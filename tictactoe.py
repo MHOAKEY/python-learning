@@ -47,6 +47,7 @@ DEFAULTSPACE = "[ ]"
 XGAMEPIECE = " X "
 OGAMEPIECE = " O "
 WINMESSAGE = "\n        Victory!"
+DRAWMESSAGE = "\n          Draw!"
 
 
 gameBoard = []
@@ -93,28 +94,51 @@ def checkWin(gameBoard):
     if gameBoard[6] == gameBoard[7] == gameBoard[8] and gameBoard[6] != DEFAULTSPACE:
         print(WINMESSAGE)
         return True
+    if gameBoard[0] == gameBoard[3] == gameBoard[6] and gameBoard[0] != DEFAULTSPACE:
+        print(WINMESSAGE)
+        return True
     if gameBoard[1] == gameBoard[4] == gameBoard[7] and gameBoard[1] != DEFAULTSPACE:
         print(WINMESSAGE)
         return True
     if gameBoard[2] == gameBoard[5] == gameBoard[8] and gameBoard[2] != DEFAULTSPACE:
         print(WINMESSAGE)
         return True
-    if gameBoard[3] == gameBoard[6] == gameBoard[8] and gameBoard[3] != DEFAULTSPACE:
+    if gameBoard[0] == gameBoard[4] == gameBoard[8] and gameBoard[0] != DEFAULTSPACE:
         print(WINMESSAGE)
         return True
-    if gameBoard[1] == gameBoard[5] == gameBoard[8] and gameBoard[1] != DEFAULTSPACE:
-        print(WINMESSAGE)
-        return True
-    if gameBoard[7] == gameBoard[5] == gameBoard[3] and gameBoard[7] != DEFAULTSPACE:
+    if gameBoard[2] == gameBoard[4] == gameBoard[6] and gameBoard[2] != DEFAULTSPACE:
         print(WINMESSAGE)
         return True
     else:
+        spaces = 0
+        for space in gameBoard:
+            if space != DEFAULTSPACE:
+                spaces += 1
+        if spaces == 9:
+            print(DRAWMESSAGE)
+            return True
         return False
 
 
 def aiMove():
-    if gameBoard[4] != XGAMEPIECE:
+    if gameBoard[4] == DEFAULTSPACE:
         gameBoard[4] = OGAMEPIECE
+    elif gameBoard[0] == DEFAULTSPACE:
+        gameBoard[0] = OGAMEPIECE
+    elif gameBoard[2] == DEFAULTSPACE:
+        gameBoard[2] = OGAMEPIECE
+    elif gameBoard[6] == DEFAULTSPACE:
+        gameBoard[6] = OGAMEPIECE
+    elif gameBoard[8] == DEFAULTSPACE:
+        gameBoard[8] = OGAMEPIECE
+    elif gameBoard[1] == DEFAULTSPACE:
+        gameBoard[1] = OGAMEPIECE
+    elif gameBoard[3] == DEFAULTSPACE:
+        gameBoard[3] = OGAMEPIECE
+    elif gameBoard[5] == DEFAULTSPACE:
+        gameBoard[5] = OGAMEPIECE
+    elif gameBoard[7] == DEFAULTSPACE:
+        gameBoard[7] = OGAMEPIECE
 
 
 def game1():
@@ -150,7 +174,6 @@ def game2():
 
         aiMove()
 
-        checkPlay(aiMove(), OGAMEPIECE)
         playerWin = checkWin(gameBoard)
         displayBoard()
         if playerWin is True:
