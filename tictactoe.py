@@ -147,9 +147,7 @@ def twoPlayer():
 def onePlayer():
     playerWin = False
     while playerWin is False:
-        userX = input("User X. Enter position #: ")
-
-        checkPlay(userX, XGAMEPIECE)
+        userXturn()
         playerWin = checkWin(gameBoard)
         displayBoard()
         if playerWin is True:
