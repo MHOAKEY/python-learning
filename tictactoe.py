@@ -18,31 +18,6 @@
 # check for a win
 
 
-# area1 = ("-")
-# area2 = ("-")
-# area3 = ("-")
-# area4 = ("-")
-# area5 = ("-")
-# area6 = ("-")
-# area7 = ("-")
-# area8 = ("-")
-# area9 = ("-")
-
-# gameBoard = [area1, area2, area3, area4, area5, area6, area7, area8, area9]
-
-# for x in gameBoard:
-#     print(gameBoard)
-
-
-# # print("\n", area1, area2, area3,
-# #       "\n", area4, area5, area6,
-# #       "\n", area7, area8, area9,)
-
-
-# # userX = input("User X enter row and column: ")
-# # if userX = "11":
-
-
 DEFAULTSPACE = "[ ]"
 XGAMEPIECE = " X "
 OGAMEPIECE = " O "
@@ -64,24 +39,8 @@ def displayBoard():
 
 
 def checkPlay(userMove, userGamePiece):
-    if userMove == ("1"):
-        gameBoard[0] = userGamePiece
-    if userMove == ("2"):
-        gameBoard[1] = userGamePiece
-    if userMove == ("3"):
-        gameBoard[2] = userGamePiece
-    if userMove == ("4"):
-        gameBoard[3] = userGamePiece
-    if userMove == ("5"):
-        gameBoard[4] = userGamePiece
-    if userMove == ("6"):
-        gameBoard[5] = userGamePiece
-    if userMove == ("7"):
-        gameBoard[6] = userGamePiece
-    if userMove == ("8"):
-        gameBoard[7] = userGamePiece
-    if userMove == ("9"):
-        gameBoard[8] = userGamePiece
+    userMove = int(userMove)
+    gameBoard[userMove - 1] = userGamePiece
 
 
 def checkWin(gameBoard):
@@ -141,30 +100,49 @@ def aiMove():
         gameBoard[7] = OGAMEPIECE
 
 
-def game1():
+def userXturn():
+    userXvalid = False
+    while userXvalid is not True:
+        userX = input("User X. Enter position #: ")
+
+        try:
+            int(userX)
+            userXvalid = True
+        except ValueError:
+            print("\nNOT A VALID CHOICE. Please try again.\n")
+
+    checkPlay(userX, XGAMEPIECE)
+
+
+def twoPlayer():
     playerWin = False
     while playerWin is False:
-        userX = input("User X. Enter position number: ")
-
-        checkPlay(userX, XGAMEPIECE)
+        userXturn()
         playerWin = checkWin(gameBoard)
         displayBoard()
         if playerWin is True:
             break
 
-        userO = input("User O. Enter position number: ")
+        userO = input("User O. Enter position #: ")
+
+        try:
+            int(userO)
+        except ValueError:
+            print("\nNOT A VALID CHOICE. Please try again.\n")
+            continue
 
         checkPlay(userO, OGAMEPIECE)
+
         playerWin = checkWin(gameBoard)
         displayBoard()
         if playerWin is True:
             break
 
 
-def game2():
+def onePlayer():
     playerWin = False
     while playerWin is False:
-        userX = input("User X. Enter position number: ")
+        userX = input("User X. Enter position #: ")
 
         checkPlay(userX, XGAMEPIECE)
         playerWin = checkWin(gameBoard)
@@ -182,8 +160,8 @@ def game2():
 
 print("\n      Tic Tac Toe")
 displayBoard()
-gameType = input("(1) player or (2) player? Enter number: ")
+gameType = input("(1) player or (2) player? Enter #: ")
 if gameType == "2":
-    game1()
+    twoPlayer()
 else:
-    game2()
+    onePlayer()
