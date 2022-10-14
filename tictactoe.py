@@ -114,6 +114,20 @@ def userXturn():
     checkPlay(userX, XGAMEPIECE)
 
 
+def userOturn():
+    userOvalid = False
+    while userOvalid is not True:
+        userO = input("User O. Enter position #: ")
+
+        try:
+            int(userO)
+            userOvalid = True
+        except ValueError:
+            print("\nNOT A VALID CHOICE. Please try again.\n")
+
+    checkPlay(userO, OGAMEPIECE)
+
+
 def twoPlayer():
     playerWin = False
     while playerWin is False:
@@ -123,16 +137,7 @@ def twoPlayer():
         if playerWin is True:
             break
 
-        userO = input("User O. Enter position #: ")
-
-        try:
-            int(userO)
-        except ValueError:
-            print("\nNOT A VALID CHOICE. Please try again.\n")
-            continue
-
-        checkPlay(userO, OGAMEPIECE)
-
+        userOturn()
         playerWin = checkWin(gameBoard)
         displayBoard()
         if playerWin is True:
