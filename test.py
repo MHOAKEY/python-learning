@@ -5,6 +5,26 @@
 # answer = "gninrom dooG"
 
 
+string = "Good morning"
+answer = string[::-1]
+
+print(string)
+print(answer)
+
+
+# OR!
+
+
+def reverseString(string):
+    reverseString = ""
+    for eachLetter in string:
+        reverseString = eachLetter + reverseString
+    print(reverseString)
+
+
+reverseString(answer)
+
+
 # 2. Given an unsorted array of numbers, find the largest and smallest numbers in the array.
 # Special Rule: You cannot sort the array to accomplish this task.
 
