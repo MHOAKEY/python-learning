@@ -18,10 +18,14 @@
 # check for a win
 
 
+from re import X
+
+
 DEFAULTSPACE = "[ ]"
 XGAMEPIECE = " X "
 OGAMEPIECE = " O "
-WINMESSAGE = "\n        Victory!"
+XWINMESSAGE = "\n     Victory for X!"
+OWINMESSAGE = "\n     Victory for O!"
 DRAWMESSAGE = "\n          Draw!"
 
 
@@ -43,31 +47,55 @@ def checkPlay(userMove, userGamePiece):
     gameBoard[userMove - 1] = userGamePiece
 
 
-def checkWin(gameBoard):
-    if gameBoard[0] == gameBoard[1] == gameBoard[2] and gameBoard[0] != DEFAULTSPACE:
-        print(WINMESSAGE)
+def checkWin(gameBoard, gamePiece, winMessage):
+    if gameBoard[0] == gameBoard[1] == gameBoard[2] and gameBoard[0] == gamePiece and gameBoard[0] != DEFAULTSPACE:
+        print(winMessage)
         return True
-    if gameBoard[3] == gameBoard[4] == gameBoard[5] and gameBoard[3] != DEFAULTSPACE:
-        print(WINMESSAGE)
+    if gameBoard[3] == gameBoard[4] == gameBoard[5] and gameBoard[3] == gamePiece and gameBoard[3] != DEFAULTSPACE:
+        print(winMessage)
         return True
-    if gameBoard[6] == gameBoard[7] == gameBoard[8] and gameBoard[6] != DEFAULTSPACE:
-        print(WINMESSAGE)
+    if gameBoard[6] == gameBoard[7] == gameBoard[8] and gameBoard[6] == gamePiece and gameBoard[6] != DEFAULTSPACE:
+        print(winMessage)
         return True
-    if gameBoard[0] == gameBoard[3] == gameBoard[6] and gameBoard[0] != DEFAULTSPACE:
-        print(WINMESSAGE)
+    if gameBoard[0] == gameBoard[3] == gameBoard[6] and gameBoard[0] == gamePiece and gameBoard[0] != DEFAULTSPACE:
+        print(winMessage)
         return True
-    if gameBoard[1] == gameBoard[4] == gameBoard[7] and gameBoard[1] != DEFAULTSPACE:
-        print(WINMESSAGE)
+    if gameBoard[1] == gameBoard[4] == gameBoard[7] and gameBoard[1] == gamePiece and gameBoard[1] != DEFAULTSPACE:
+        print(winMessage)
         return True
-    if gameBoard[2] == gameBoard[5] == gameBoard[8] and gameBoard[2] != DEFAULTSPACE:
-        print(WINMESSAGE)
+    if gameBoard[2] == gameBoard[5] == gameBoard[8] and gameBoard[2] == gamePiece and gameBoard[2] != DEFAULTSPACE:
+        print(winMessage)
         return True
-    if gameBoard[0] == gameBoard[4] == gameBoard[8] and gameBoard[0] != DEFAULTSPACE:
-        print(WINMESSAGE)
+    if gameBoard[0] == gameBoard[4] == gameBoard[8] and gameBoard[0] == gamePiece and gameBoard[0] != DEFAULTSPACE:
+        print(winMessage)
         return True
-    if gameBoard[2] == gameBoard[4] == gameBoard[6] and gameBoard[2] != DEFAULTSPACE:
-        print(WINMESSAGE)
+    if gameBoard[2] == gameBoard[4] == gameBoard[6] and gameBoard[2] == gamePiece and gameBoard[2] != DEFAULTSPACE:
+        print(winMessage)
         return True
+    # if gameBoard[0] == gameBoard[1] == gameBoard[2] and gameBoard[0] == OGAMEPIECE and gameBoard[0] != DEFAULTSPACE:
+    #     print(OWINMESSAGE)
+    #     return True
+    # if gameBoard[3] == gameBoard[4] == gameBoard[5] and gameBoard[3] == OGAMEPIECE and gameBoard[3] != DEFAULTSPACE:
+    #     print(OWINMESSAGE)
+    #     return True
+    # if gameBoard[6] == gameBoard[7] == gameBoard[8] and gameBoard[6] == OGAMEPIECE and gameBoard[6] != DEFAULTSPACE:
+    #     print(OWINMESSAGE)
+    #     return True
+    # if gameBoard[0] == gameBoard[3] == gameBoard[6] and gameBoard[0] == OGAMEPIECE and gameBoard[0] != DEFAULTSPACE:
+    #     print(OWINMESSAGE)
+    #     return True
+    # if gameBoard[1] == gameBoard[4] == gameBoard[7] and gameBoard[1] == OGAMEPIECE and gameBoard[1] != DEFAULTSPACE:
+    #     print(OWINMESSAGE)
+    #     return True
+    # if gameBoard[2] == gameBoard[5] == gameBoard[8] and gameBoard[2] == OGAMEPIECE and gameBoard[2] != DEFAULTSPACE:
+    #     print(OWINMESSAGE)
+    #     return True
+    # if gameBoard[0] == gameBoard[4] == gameBoard[8] and gameBoard[0] == OGAMEPIECE and gameBoard[0] != DEFAULTSPACE:
+    #     print(OWINMESSAGE)
+    #     return True
+    # if gameBoard[2] == gameBoard[4] == gameBoard[6] and gameBoard[2] == OGAMEPIECE and gameBoard[2] != DEFAULTSPACE:
+    #     print(OWINMESSAGE)
+    #     return True
     else:
         spaces = 0
         for space in gameBoard:
@@ -106,9 +134,13 @@ def userXturn():
         userX = input("User X. Enter position #: ")
 
         try:
-            int(userX)
-            userXvalid = True
-        except ValueError:
+            # int(userX)
+            if int(userX) > 0 and int(userX) < 10:
+                userXvalid = True
+            else:
+                print("\nNOT A VALID CHOICE. Please try again.\n")
+
+        except:
             print("\nNOT A VALID CHOICE. Please try again.\n")
 
     checkPlay(userX, XGAMEPIECE)
@@ -120,9 +152,12 @@ def userOturn():
         userO = input("User O. Enter position #: ")
 
         try:
-            int(userO)
-            userOvalid = True
-        except ValueError:
+            # int(userO)
+            if int(userO) > 0 and int(userO) < 10:
+                userOvalid = True
+            else:
+                print("\nNOT A VALID CHOICE. Please try again.\n")
+        except:
             print("\nNOT A VALID CHOICE. Please try again.\n")
 
     checkPlay(userO, OGAMEPIECE)
@@ -132,13 +167,13 @@ def twoPlayer():
     playerWin = False
     while playerWin is False:
         userXturn()
-        playerWin = checkWin(gameBoard)
+        playerWin = checkWin(gameBoard, XGAMEPIECE, XWINMESSAGE)
         displayBoard()
         if playerWin is True:
             break
 
         userOturn()
-        playerWin = checkWin(gameBoard)
+        playerWin = checkWin(gameBoard, OGAMEPIECE, OWINMESSAGE)
         displayBoard()
         if playerWin is True:
             break
@@ -148,14 +183,14 @@ def onePlayer():
     playerWin = False
     while playerWin is False:
         userXturn()
-        playerWin = checkWin(gameBoard)
+        playerWin = checkWin(gameBoard, XGAMEPIECE, XWINMESSAGE)
         displayBoard()
         if playerWin is True:
             break
 
         aiMove()
 
-        playerWin = checkWin(gameBoard)
+        playerWin = checkWin(gameBoard, OGAMEPIECE, OWINMESSAGE)
         displayBoard()
         if playerWin is True:
             break
