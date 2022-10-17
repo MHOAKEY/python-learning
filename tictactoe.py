@@ -81,13 +81,13 @@ def aiMove():
         gameBoard[7] = OGAMEPIECE
 
 
-def userTurn(player, gamePiece):
+def userTurn(gamePiece):
     userTurnValid = False
     while userTurnValid is not True:
-        player = input("User " + gamePiece + ". " "Enter position #: ")
+        playerMove = input("User " + gamePiece + ". " "Enter position #: ")
 
         try:
-            if int(player) > 0 and int(player) < 10:
+            if int(playerMove) > 0 and int(playerMove) < 10:
                 userTurnValid = True
             else:
                 print("\nNOT A VALID CHOICE. Please try again.\n")
@@ -95,19 +95,19 @@ def userTurn(player, gamePiece):
         except:
             print("\nNOT A VALID CHOICE. Please try again.\n")
 
-    checkPlay(player, gamePiece)
+    checkPlay(playerMove, gamePiece)
 
 
 def twoPlayer():
     playerWin = False
     while playerWin is False:
-        userTurn(XGAMEPIECE, XGAMEPIECE)
+        userTurn(XGAMEPIECE)
         playerWin = checkWin(gameBoard, XGAMEPIECE, XWINMESSAGE)
         displayBoard()
         if playerWin is True:
             break
 
-        userTurn(OGAMEPIECE, OGAMEPIECE)
+        userTurn(OGAMEPIECE)
         playerWin = checkWin(gameBoard, OGAMEPIECE, OWINMESSAGE)
         displayBoard()
         if playerWin is True:
@@ -117,7 +117,7 @@ def twoPlayer():
 def onePlayer():
     playerWin = False
     while playerWin is False:
-        userTurn(XGAMEPIECE, XGAMEPIECE)
+        userTurn(XGAMEPIECE)
         playerWin = checkWin(gameBoard, XGAMEPIECE, XWINMESSAGE)
         displayBoard()
         if playerWin is True:
