@@ -18,9 +18,6 @@
 # check for a win
 
 
-from re import X
-
-
 DEFAULTSPACE = "[ ]"
 XGAMEPIECE = " X "
 OGAMEPIECE = " O "
