@@ -6,12 +6,6 @@ OWINMESSAGE = "\n     Victory for O!"
 DRAWMESSAGE = "\n          Draw!"
 
 
-gameBoard = []
-
-for _ in range(9):
-    gameBoard.append(DEFAULTSPACE)
-
-
 def displayBoard():
     print("\n", gameBoard[0:3], "     ", [1, 2, 3],
           "\n", gameBoard[3:6], "     ", [4, 5, 6],
@@ -57,7 +51,7 @@ def checkWin(gameBoard, gamePiece, winMessage):
         if spaces == 9:
             print(DRAWMESSAGE)
             return True
-        return False
+    return False
 
 
 def aiMove():
@@ -124,17 +118,27 @@ def onePlayer():
             break
 
         aiMove()
-
         playerWin = checkWin(gameBoard, OGAMEPIECE, OWINMESSAGE)
         displayBoard()
         if playerWin is True:
             break
 
 
-print("\n      Tic Tac Toe")
-displayBoard()
-gameType = input("(1) player or (2) player? Enter #: ")
-if gameType == "2":
-    twoPlayer()
-else:
-    onePlayer()
+while True:
+    gameBoard = []
+
+    for _ in range(9):
+        gameBoard.append(DEFAULTSPACE)
+
+    print("\n      Tic Tac Toe")
+    displayBoard()
+    gameType = input("(1) player or (2) player? Enter #: ")
+    if gameType == "2":
+        twoPlayer()
+    else:
+        onePlayer()
+    userChoice = input("\nPlay again? (y/n): ")
+    if userChoice == "y":
+        continue
+    else:
+        break
