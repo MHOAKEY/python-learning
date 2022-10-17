@@ -1,23 +1,3 @@
-# Build a Tic Tac Toe game in python
-# - 2 Human players
-# - One player selects a space. If the space is not taken then the space is assigned with X or O depending on the player
-# - If the space is taken then the user is asked to choose a different space
-# - Display the state of the board to the players after each move
-# - You will likely want to check for a win condition after each turn instead of waiting until the end
-# - Make sure that all win conditions are checked for (row, column, diagonal)
-# - Display the winner to the users unless game is a tie, in which case just display that it was a tie.
-
-# Bonus points:
-# - Add ability to start over after game is finished without having to run the program again
-# - Make the game have an Ai that can play a single human player
-
-
-# game board displays as 3x3 grid
-# store data for 9 positions of the game board
-# gather user input that translates into a change in a position of the game board
-# check for a win
-
-
 DEFAULTSPACE = "[ ]"
 XGAMEPIECE = " X "
 OGAMEPIECE = " O "
@@ -69,30 +49,6 @@ def checkWin(gameBoard, gamePiece, winMessage):
     if gameBoard[2] == gameBoard[4] == gameBoard[6] and gameBoard[2] == gamePiece and gameBoard[2] != DEFAULTSPACE:
         print(winMessage)
         return True
-    # if gameBoard[0] == gameBoard[1] == gameBoard[2] and gameBoard[0] == OGAMEPIECE and gameBoard[0] != DEFAULTSPACE:
-    #     print(OWINMESSAGE)
-    #     return True
-    # if gameBoard[3] == gameBoard[4] == gameBoard[5] and gameBoard[3] == OGAMEPIECE and gameBoard[3] != DEFAULTSPACE:
-    #     print(OWINMESSAGE)
-    #     return True
-    # if gameBoard[6] == gameBoard[7] == gameBoard[8] and gameBoard[6] == OGAMEPIECE and gameBoard[6] != DEFAULTSPACE:
-    #     print(OWINMESSAGE)
-    #     return True
-    # if gameBoard[0] == gameBoard[3] == gameBoard[6] and gameBoard[0] == OGAMEPIECE and gameBoard[0] != DEFAULTSPACE:
-    #     print(OWINMESSAGE)
-    #     return True
-    # if gameBoard[1] == gameBoard[4] == gameBoard[7] and gameBoard[1] == OGAMEPIECE and gameBoard[1] != DEFAULTSPACE:
-    #     print(OWINMESSAGE)
-    #     return True
-    # if gameBoard[2] == gameBoard[5] == gameBoard[8] and gameBoard[2] == OGAMEPIECE and gameBoard[2] != DEFAULTSPACE:
-    #     print(OWINMESSAGE)
-    #     return True
-    # if gameBoard[0] == gameBoard[4] == gameBoard[8] and gameBoard[0] == OGAMEPIECE and gameBoard[0] != DEFAULTSPACE:
-    #     print(OWINMESSAGE)
-    #     return True
-    # if gameBoard[2] == gameBoard[4] == gameBoard[6] and gameBoard[2] == OGAMEPIECE and gameBoard[2] != DEFAULTSPACE:
-    #     print(OWINMESSAGE)
-    #     return True
     else:
         spaces = 0
         for space in gameBoard:
@@ -131,7 +87,6 @@ def userXturn():
         userX = input("User X. Enter position #: ")
 
         try:
-            # int(userX)
             if int(userX) > 0 and int(userX) < 10:
                 userXvalid = True
             else:
@@ -149,7 +104,6 @@ def userOturn():
         userO = input("User O. Enter position #: ")
 
         try:
-            # int(userO)
             if int(userO) > 0 and int(userO) < 10:
                 userOvalid = True
             else:
