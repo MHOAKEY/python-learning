@@ -10,7 +10,7 @@ print("string = Good morning")
 string = "Good morning"
 answer = string[::-1]
 
-print("answer =", answer)
+print("reverse string =", answer)
 
 
 # OR!
@@ -23,7 +23,7 @@ def reverseString(string):
     return reverseString
 
 
-print("answer =", reverseString(string))
+print("reverse string =", reverseString(string))
 
 
 print("\n2:")
@@ -50,7 +50,7 @@ for num in array[1:]:
         smallNum = num
 # print(smallNum)
 
-print("answer = Largest:", largeNum, "Smallest:", smallNum)
+print("from array; Largest #:", largeNum, "Smallest #:", smallNum)
 
 
 # OR!
@@ -74,8 +74,8 @@ def findSmallNum(numbers):
     return smallNum
 
 
-print("answer = Largest:", findLargeNum(
-    array), "Smallest:", findSmallNum(array))
+print("from array; Largest #:", findLargeNum(
+    array), "Smallest #:", findSmallNum(array))
 
 
 print("\n3:")
@@ -87,8 +87,39 @@ print("\n3:")
 # answer = index 1 and 2 or index 0 and 3
 
 
+intArray = [1, 2, 3, 4, 5]
+print("intArray =", intArray)
+
+targetInt = 5
+print("targetInt =", targetInt)
+
+index = 0
+innerLength = len(intArray)
+innerIndex = 1
+
+answer = []
+
+
+for firstNum in intArray:
+    # print("\n\nouterloop")
+    # print("int (1):", firstNum)
+    # print("index:", index)
+    for innerLoopIndex in range(innerIndex, innerLength):
+        # print("\ninnerloop")
+        # print("int (2):", intArray[innerLoopIndex])
+        # print("index:", innerLoopIndex)
+        # print("int (1) + int (2) =", firstNum + intArray[innerLoopIndex])
+        if firstNum + intArray[innerLoopIndex] == targetInt:
+            answer.append([index, innerLoopIndex])
+    innerIndex += 1
+    index += 1
+
+
+print("indices that equal targetInt:", answer)
+
+
 # 4. Write a function that takes in 2 strings and finds out if they are anagrams of eachother.
 
 # Function must take 2 arguments. Each of them a string.
-# Function must find of if they are anagrams
+# Function must find out if they are anagrams
 # Function must return true or false
