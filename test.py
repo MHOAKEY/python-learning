@@ -123,3 +123,33 @@ print("indices that equal targetInt:", answer)
 # Function must take 2 arguments. Each of them a string.
 # Function must find out if they are anagrams
 # Function must return true or false
+
+
+print("\n4:")
+# word1 = "dog"
+
+# word2 = "god"
+
+# count = 0
+
+# for letterFromWord1 in word1:
+#     print("word1:", letterFromWord1)
+#     for letterFromWord2 in word2:
+#         print(" word2:", letterFromWord2)
+#         if letterFromWord1 == letterFromWord2:
+#             print("               count:", count)
+#             count += 1
+# if count == len(word1):
+#     print("     length of word1:", len(word1))
+#     print("Are these words an anagram? \nTrue")
+# else:
+#     print("Are these words an anagram? \nFalse")
+
+print("enter a word below:")
+word1 = input()
+print("enter a word below:")
+word2 = input()
+
+while len(word1) != len(word2):
+    print("These words are NOT an anagram")
+    break
