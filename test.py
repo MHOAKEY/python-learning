@@ -118,6 +118,7 @@ for firstNum in intArray:
 print("indices that equal targetInt:", answer)
 
 
+print("\n4:")
 # 4. Write a function that takes in 2 strings and finds out if they are anagrams of eachother.
 
 # Function must take 2 arguments. Each of them a string.
@@ -125,31 +126,22 @@ print("indices that equal targetInt:", answer)
 # Function must return true or false
 
 
-print("\n4:")
-# word1 = "dog"
+def checkForAnagram(word1, word2):
+    if len(word1) == len(word2):
+        word1 = sorted(word1)
+        word2 = sorted(word2)
 
-# word2 = "god"
+        for index in range(len(word1)):
+            if word1[index] != word2[index]:
+                return False
+        return True
+    else:
+        return False
 
-# count = 0
-
-# for letterFromWord1 in word1:
-#     print("word1:", letterFromWord1)
-#     for letterFromWord2 in word2:
-#         print(" word2:", letterFromWord2)
-#         if letterFromWord1 == letterFromWord2:
-#             print("               count:", count)
-#             count += 1
-# if count == len(word1):
-#     print("     length of word1:", len(word1))
-#     print("Are these words an anagram? \nTrue")
-# else:
-#     print("Are these words an anagram? \nFalse")
 
 print("enter a word below:")
 word1 = input()
 print("enter a word below:")
 word2 = input()
 
-while len(word1) != len(word2):
-    print("These words are NOT an anagram")
-    break
+print(checkForAnagram(word1, word2))
