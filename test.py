@@ -141,9 +141,11 @@ def checkForAnagram(word1, word2):
         return False
 
 
-print("enter a word below:")
+print("Check if two words are an Anagram.")
+print("\nenter a word below:")
 word1 = input()
 print("enter a word below:")
 word2 = input()
 
-print(checkForAnagram(word1, word2))
+print("\nResult:")
+print(checkForAnagram(word1, word2), "\n")
