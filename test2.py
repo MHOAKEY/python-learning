@@ -12,15 +12,16 @@ print("\n1.")
 
 
 today = datetime.datetime.now()
+todayYearMonthDay = today.strftime("%Y" + " %m" + " %d")
+givenDate = ""
+
+for i in todayYearMonthDay:
+    print(i)
 
 
-def daysBetweenDates():
-    pass
-
-
-print("Find out how many days are between two dates.")
-print("Enter a date (yyyy-mm-dd):")
-date = input()
+# print("Find out how many days are between two dates.")
+# print("Enter a date (yyyy-mm-dd):")
+# date = input()
 
 
 # 2. Write a function that will find the length of a nested array
