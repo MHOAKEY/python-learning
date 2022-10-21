@@ -3,17 +3,9 @@ print("\n1:")
 
 # example:
 # string = "Good morning"
+string = "Good morning"
 print("string = Good morning")
 # answer = "gninrom dooG"
-
-
-string = "Good morning"
-answer = string[::-1]
-
-print("reverse string =", answer)
-
-
-# OR!
 
 
 def reverseString(string):
