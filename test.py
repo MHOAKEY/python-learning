@@ -38,22 +38,22 @@ print("array = [ 5, 8, 1, 19, 7, 4, 6 ]")
 
 array = [5, 8, 1, 19, 7, 4, 6]
 
-largeNum = array[0]
-for num in array[1:]:
-    if num > largeNum:
-        largeNum = num
-# print(largeNum)
+# largeNum = array[0]
+# for num in array[1:]:
+#     if num > largeNum:
+#         largeNum = num
+# # print(largeNum)
 
-smallNum = array[0]
-for num in array[1:]:
-    if num < smallNum:
-        smallNum = num
-# print(smallNum)
+# smallNum = array[0]
+# for num in array[1:]:
+#     if num < smallNum:
+#         smallNum = num
+# # print(smallNum)
 
-print("from array; Largest #:", largeNum, "Smallest #:", smallNum)
+# print("from array; Largest #:", largeNum, "Smallest #:", smallNum)
 
 
-# OR!
+# # OR!
 
 
 def findLargeNum(numbers):
@@ -61,7 +61,6 @@ def findLargeNum(numbers):
     for number in numbers[1:]:
         if number > largeNum:
             largeNum = number
-    # print(largeNum)
     return largeNum
 
 
@@ -70,12 +69,15 @@ def findSmallNum(numbers):
     for number in numbers[1:]:
         if number < smallNum:
             smallNum = number
-    # print(smallNum)
     return smallNum
 
 
-print("from array; Largest #:", findLargeNum(
-    array), "Smallest #:", findSmallNum(array))
+def findLargeAndSmall(array):
+    return ("Largest = ", findLargeNum(array),
+            "Smallesst = ", findSmallNum(array))
+
+
+print(findLargeAndSmall(array))
 
 
 print("\n3:")
