@@ -73,8 +73,7 @@ def findSmallNum(numbers):
 
 
 def findLargeAndSmall(array):
-    return ("Largest = ", findLargeNum(array),
-            "Smallesst = ", findSmallNum(array))
+    return "Largest = " + str(findLargeNum(array)) + " Smallest = " + str(findSmallNum(array))
 
 
 print(findLargeAndSmall(array))
