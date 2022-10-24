@@ -1,5 +1,6 @@
 import datetime
-print("\n1.")
+import time
+# print("\n1.")
 # 1. Given a date (yyyy-mm-dd) write a function that tells you how many days it has been since that date. The function must be able to find out what the current date is.
 
 # BONUS if the date is in the future, make the function tell you how many days
@@ -12,16 +13,26 @@ print("\n1.")
 
 
 today = datetime.datetime.now()
-todayYearMonthDay = today.strftime("%Y" + " %m" + " %d")
-givenDate = ""
+todayUnix = time.mktime(today.timetuple()) * 1000
+# todayYear = int(today.strftime("%Y"))
+# todayMonth = int(today.strftime("%m"))
+# todayDay = int(today.strftime("%d"))
 
-for i in todayYearMonthDay:
-    print(i)
+userYear = int(input())
+userMonth = int(input())
+userDay = int(input())
+userYearMonthDay = datetime.date(userYear, userMonth, userDay)
+userUnixTime = (time.mktime(userYearMonthDay.timetuple()) * 1000)
+unixBetweenDates = todayUnix - userUnixTime
 
+yearsBetween = (unixBetweenDates / 31, 536, 000, 000) - unixBetweenDates
 
-# print("Find out how many days are between two dates.")
-# print("Enter a date (yyyy-mm-dd):")
-# date = input()
+print("Today date:", today)
+print(" User date:", userYearMonthDay)
+print("Today Unix:", todayUnix)
+print(" User Unix:", userUnixTime)
+print("Unix remainder:", unixBetweenDates)
+print(time.localtime(int(unixBetweenDates)))
 
 
 # 2. Write a function that will find the length of a nested array
