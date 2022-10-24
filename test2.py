@@ -13,26 +13,37 @@ import time
 
 
 today = datetime.datetime.now()
+todayYearMonthDay = today.strftime("%Y" + " %m" + " %d")
 todayUnix = time.mktime(today.timetuple()) * 1000
-# todayYear = int(today.strftime("%Y"))
-# todayMonth = int(today.strftime("%m"))
-# todayDay = int(today.strftime("%d"))
+print("\nToday is YYYY-MM-DD:", todayYearMonthDay)
 
+
+print("\nEnter year as YYYY format:")
 userYear = int(input())
+print("\nEnter month as MM format:")
 userMonth = int(input())
+print("\nEnter Day as DD format:")
 userDay = int(input())
+
+
 userYearMonthDay = datetime.date(userYear, userMonth, userDay)
 userUnixTime = (time.mktime(userYearMonthDay.timetuple()) * 1000)
 unixBetweenDates = todayUnix - userUnixTime
 
-yearsBetween = (unixBetweenDates / 31, 536, 000, 000) - unixBetweenDates
+unixYearsBetween = unixBetweenDates / 31_536_000_000
+unixMonthsBetween = (unixBetweenDates -
+                     (int(unixYearsBetween) * 31_536_000_000)) / 2_629_800_000
+unixDaysBetween = ((unixBetweenDates - (int(unixYearsBetween) * 31_536_000_000)
+                    ) - (int(unixMonthsBetween) * 2_629_800_000)) / 86_400_000
 
-print("Today date:", today)
-print(" User date:", userYearMonthDay)
-print("Today Unix:", todayUnix)
-print(" User Unix:", userUnixTime)
-print("Unix remainder:", unixBetweenDates)
-print(time.localtime(int(unixBetweenDates)))
+print("\nYou have entered:", userYearMonthDay)
+# print("Today Unix:", todayUnix)
+# print(" User Unix:", userUnixTime)
+# print("Unix remainder:", unixBetweenDates)
+print("\n\nTime between today and time entered:")
+print("Year(s):", int(unixYearsBetween))
+print("Month(s):", int(unixMonthsBetween))
+print("Day(s):", int(unixDaysBetween), "\n")
 
 
 # 2. Write a function that will find the length of a nested array
