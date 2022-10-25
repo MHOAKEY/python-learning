@@ -1,5 +1,5 @@
-# import datetime
-# import time
+import datetime
+import time
 # 1. Given a date (yyyy-mm-dd) write a function that tells you how many days it has been since that date. The function must be able to find out what the current date is.
 
 # BONUS if the date is in the future, make the function tell you how many days
@@ -12,8 +12,6 @@
 
 
 def timeBetweenNowAndThen(dateInput):
-    import datetime
-    import time
     today = datetime.datetime.now()
     todayYearMonthDay = today.strftime("%Y" + " %m" + " %d")
     todayUnix = time.mktime(today.timetuple()) * 1000
@@ -30,7 +28,13 @@ def timeBetweenNowAndThen(dateInput):
     unixDaysBetween = ((unixBetweenDates - (int(unixYearsBetween) * 31_536_000_000)
                         ) - (int(unixMonthsBetween) * 2_629_800_000)) / 86_400_000
 
-    return int(unixYearsBetween), "Year(s)", int(unixMonthsBetween), "Month(s)", int(unixDaysBetween), "Day(s)"
+    result = str(int(unixYearsBetween)), " Year(s), ", str(int(
+        unixMonthsBetween)), " Month(s) and ", str(int(unixDaysBetween)), " Day(s)"
+
+    string = ""
+    for items in result:
+        string = string + items
+    return string
 
 
 print("\nEnter date in format YYYY-MM-DD:")
