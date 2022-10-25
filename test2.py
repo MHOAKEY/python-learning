@@ -13,7 +13,6 @@ import time
 
 def timeBetweenNowAndThen(dateInput):
     today = datetime.datetime.now()
-    todayYearMonthDay = today.strftime("%Y" + " %m" + " %d")
     todayUnix = time.mktime(today.timetuple()) * 1000
     userYear = dateInput[:4]
     userMonth = dateInput[5:7]
