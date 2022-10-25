@@ -33,13 +33,17 @@ def timeBetweenNowAndThen(dateInput):
     string = ""
     for items in result:
         string = string + items
-    return string
+    if string.find("-") == -1:
+        print("Time since date entered:")
+        return string
+    else:
+        print("Time until date entered:")
+        return string.replace("-", "")
 
 
 print("\nEnter date in format YYYY-MM-DD:")
 userYYYY_MM_DD = input()
-print("\nTime since now and date entered:\n",
-      timeBetweenNowAndThen(userYYYY_MM_DD), "\n")
+print(timeBetweenNowAndThen(userYYYY_MM_DD))
 
 
 # today = datetime.datetime.now()
