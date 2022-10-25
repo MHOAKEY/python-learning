@@ -27,18 +27,15 @@ def timeBetweenNowAndThen(dateInput):
     unixDaysBetween = ((unixBetweenDates - (int(unixYearsBetween) * 31_536_000_000)
                         ) - (int(unixMonthsBetween) * 2_629_800_000)) / 86_400_000
 
-    result = str(int(unixYearsBetween)), " Year(s), ", str(int(
-        unixMonthsBetween)), " Month(s) and ", str(int(unixDaysBetween)), " Day(s)"
+    result = str(int(unixYearsBetween)) + " Year(s), " + str(int(
+        unixMonthsBetween)) + " Month(s) and " + str(int(unixDaysBetween)) + " Day(s)"
 
-    string = ""
-    for items in result:
-        string = string + items
-    if string.find("-") == -1:
+    if result.find("-") == -1:
         print("Time since date entered:")
-        return string
+        return result
     else:
         print("Time until date entered:")
-        return string.replace("-", "")
+        return result.replace("-", "")
 
 
 print("\nEnter date in format YYYY-MM-DD:")
