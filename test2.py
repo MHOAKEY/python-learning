@@ -1,6 +1,5 @@
-import datetime
-import time
-# print("\n1.")
+# import datetime
+# import time
 # 1. Given a date (yyyy-mm-dd) write a function that tells you how many days it has been since that date. The function must be able to find out what the current date is.
 
 # BONUS if the date is in the future, make the function tell you how many days
@@ -12,38 +11,79 @@ import time
 # 2022-06-23 this will obviously vary based on what day it currently is)
 
 
-today = datetime.datetime.now()
-todayYearMonthDay = today.strftime("%Y" + " %m" + " %d")
-todayUnix = time.mktime(today.timetuple()) * 1000
-print("\nToday is YYYY-MM-DD:", todayYearMonthDay)
+def timeBetweenNowAndThen(dateInput):
+    import datetime
+    import time
+    today = datetime.datetime.now()
+    todayYearMonthDay = today.strftime("%Y" + " %m" + " %d")
+    todayUnix = time.mktime(today.timetuple()) * 1000
+    userYear = dateInput[:4]
+    userMonth = dateInput[5:7]
+    userDay = dateInput[8:11]
+    userYearMonthDay = datetime.date(
+        int(userYear), int(userMonth), int(userDay))
+    userUnixTime = (time.mktime(userYearMonthDay.timetuple()) * 1000)
+    unixBetweenDates = todayUnix - userUnixTime
+    unixYearsBetween = unixBetweenDates / 31_536_000_000
+    unixMonthsBetween = (unixBetweenDates -
+                         (int(unixYearsBetween) * 31_536_000_000)) / 2_629_800_000
+    unixDaysBetween = ((unixBetweenDates - (int(unixYearsBetween) * 31_536_000_000)
+                        ) - (int(unixMonthsBetween) * 2_629_800_000)) / 86_400_000
+
+    return int(unixYearsBetween), "Year(s)", int(unixMonthsBetween), "Month(s)", int(unixDaysBetween), "Day(s)"
 
 
-print("\nEnter year as YYYY format:")
-userYear = int(input())
-print("\nEnter month as MM format:")
-userMonth = int(input())
-print("\nEnter Day as DD format:")
-userDay = int(input())
+print("\nEnter date in format YYYY-MM-DD:")
+userYYYY_MM_DD = input()
+print("\nTime since now and date entered:\n",
+      timeBetweenNowAndThen(userYYYY_MM_DD), "\n")
 
 
-userYearMonthDay = datetime.date(userYear, userMonth, userDay)
-userUnixTime = (time.mktime(userYearMonthDay.timetuple()) * 1000)
-unixBetweenDates = todayUnix - userUnixTime
+# today = datetime.datetime.now()
+# todayYearMonthDay = today.strftime("%Y" + " %m" + " %d")
+# todayUnix = time.mktime(today.timetuple()) * 1000
+# print("\n\nToday is YYYY-MM-DD:", todayYearMonthDay)
 
-unixYearsBetween = unixBetweenDates / 31_536_000_000
-unixMonthsBetween = (unixBetweenDates -
-                     (int(unixYearsBetween) * 31_536_000_000)) / 2_629_800_000
-unixDaysBetween = ((unixBetweenDates - (int(unixYearsBetween) * 31_536_000_000)
-                    ) - (int(unixMonthsBetween) * 2_629_800_000)) / 86_400_000
 
-print("\nYou have entered:", userYearMonthDay)
-# print("Today Unix:", todayUnix)
-# print(" User Unix:", userUnixTime)
-# print("Unix remainder:", unixBetweenDates)
-print("\n\nTime between today and time entered:")
-print("Year(s):", int(unixYearsBetween))
-print("Month(s):", int(unixMonthsBetween))
-print("Day(s):", int(unixDaysBetween), "\n")
+# print("\nEnter year as YYYY format:")
+# userYear = int(input())
+# print("\nEnter month as MM format:")
+# userMonth = int(input())
+# print("\nEnter Day as DD format:")
+# userDay = int(input())
+
+
+# userYYYYMMDD = input()
+
+
+# userYear = userYYYYMMDD[:4]
+# userMonth = userYYYYMMDD[5:7]
+# userDay = userYYYYMMDD[8:11]
+
+# print(userYear)
+# print(userMonth)
+# print(userDay)
+
+
+# userYearMonthDay = datetime.date(userYear, userMonth, userDay)
+# userUnixTime = (time.mktime(userYearMonthDay.timetuple()) * 1000)
+# unixBetweenDates = todayUnix - userUnixTime
+
+# unixYearsBetween = unixBetweenDates / 31_536_000_000
+# unixMonthsBetween = (unixBetweenDates -
+#                      (int(unixYearsBetween) * 31_536_000_000)) / 2_629_800_000
+# unixDaysBetween = ((unixBetweenDates - (int(unixYearsBetween) * 31_536_000_000)
+#                     ) - (int(unixMonthsBetween) * 2_629_800_000)) / 86_400_000
+
+# print("\nYou have entered:", userYearMonthDay)
+# # print("Today Unix:", todayUnix)
+# # print(" User Unix:", userUnixTime)
+# # print("Unix remainder:", unixBetweenDates)
+# print("\n\nTime between today and time entered:")
+# print("Year(s):", int(unixYearsBetween), "Month(s):", int(
+#     unixMonthsBetween), "Day(s):", int(unixDaysBetween), "\n\n")
+# print("Month(s):", int(unixMonthsBetween))
+# print("Day(s):", int(unixDaysBetween), "\n\n")
 
 
 # 2. Write a function that will find the length of a nested array
