@@ -51,7 +51,7 @@ import time
 # output: nested array has 2 values
 
 
-array = [1, [1, 2, 3], 2, 3]
+array = ["dog", ["apple", "orange"], "frog", "cat"]
 
 
 def findNestCheckLength(array):
