@@ -11,33 +11,33 @@ import time
 # 2022-06-23 this will obviously vary based on what day it currently is)
 
 
-# def timeBetweenNowAndThen(dateInput):
-#     today = datetime.datetime.now()
-#     todayUnix = time.mktime(today.timetuple()) * 1000
-#     userYear = dateInput[:4]
-#     userMonth = dateInput[5:7]
-#     userDay = dateInput[8:11]
-#     userYearMonthDay = datetime.date(
-#         int(userYear), int(userMonth), int(userDay))
-#     userUnixTime = (time.mktime(userYearMonthDay.timetuple()) * 1000)
-#     unixBetweenDates = todayUnix - userUnixTime
-#     unixYearsBetween = unixBetweenDates / 31_536_000_000
-#     unixMonthsBetween = (unixBetweenDates -
-#                          (int(unixYearsBetween) * 31_536_000_000)) / 2_629_800_000
-#     unixDaysBetween = ((unixBetweenDates - (int(unixYearsBetween) * 31_536_000_000)
-#                         ) - (int(unixMonthsBetween) * 2_629_800_000)) / 86_400_000
+def timeBetweenNowAndThen(dateInput):
+    today = datetime.datetime.now()
+    todayUnix = time.mktime(today.timetuple()) * 1000
+    userYear = dateInput[:4]
+    userMonth = dateInput[5:7]
+    userDay = dateInput[8:11]
+    userYearMonthDay = datetime.date(
+        int(userYear), int(userMonth), int(userDay))
+    userUnixTime = (time.mktime(userYearMonthDay.timetuple()) * 1000)
+    unixBetweenDates = todayUnix - userUnixTime
+    unixYearsBetween = unixBetweenDates / 31_536_000_000
+    unixMonthsBetween = (unixBetweenDates -
+                         (int(unixYearsBetween) * 31_536_000_000)) / 2_629_800_000
+    unixDaysBetween = ((unixBetweenDates - (int(unixYearsBetween) * 31_536_000_000)
+                        ) - (int(unixMonthsBetween) * 2_629_800_000)) / 86_400_000
 
-#     result = str(int(unixYearsBetween)) + " Year(s), " + str(int(
-#         unixMonthsBetween)) + " Month(s), " + str(int(unixDaysBetween)) + " Day(s)"
+    result = str(int(unixYearsBetween)) + " Year(s), " + str(int(
+        unixMonthsBetween)) + " Month(s), " + str(int(unixDaysBetween)) + " Day(s)"
 
-#     if result.find("-") == -1:
-#         return result + " ago."
-#     return result.replace("-", "") + " until."
+    if result.find("-") == -1:
+        return result + " ago."
+    return result.replace("-", "") + " until."
 
 
-# print("\nEnter date in format YYYY-MM-DD:")
-# userYYYY_MM_DD = input()
-# print(timeBetweenNowAndThen(userYYYY_MM_DD))
+print("\nEnter date in format YYYY-MM-DD:")
+userYYYY_MM_DD = input()
+print(timeBetweenNowAndThen(userYYYY_MM_DD))
 
 
 # 2. Write a function that will find the length of a nested array
@@ -51,16 +51,16 @@ import time
 # output: nested array has 2 values
 
 
-# array = ["dog", ["apple", "orange"], "frog", "cat"]
+array = ["dog", ["apple", "orange"], "frog", "cat"]
 
 
-# def fii / i == 1 and i / 1 == i and i / 2 == intndNestCheckLength(array):
-#     for i in array:
-#         if isinstance(i, list):
-#             return len(i)
+def findNestCheckLength(array):
+    for i in array:
+        if isinstance(i, list):
+            return len(i)
 
 
-# print(findNestCheckLength(array))
+print(findNestCheckLength(array))
 
 # 3. Write a function that will find any prime numbers in a given range.
 # Example input 5,7. The range is from 5 to 7 inclusive in this case. So the function will need to check if 5, 6 or 7 are prime numbers.
