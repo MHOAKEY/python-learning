@@ -51,16 +51,16 @@ import time
 # output: nested array has 2 values
 
 
-array = ["dog", ["apple", "orange"], "frog", "cat"]
+# array = ["dog", ["apple", "orange"], "frog", "cat"]
 
 
-def findNestCheckLength(array):
-    for i in array:
-        if isinstance(i, list):
-            return len(i)
+# def fii / i == 1 and i / 1 == i and i / 2 == intndNestCheckLength(array):
+#     for i in array:
+#         if isinstance(i, list):
+#             return len(i)
 
 
-print(findNestCheckLength(array))
+# print(findNestCheckLength(array))
 
 # 3. Write a function that will find any prime numbers in a given range.
 # Example input 5,7. The range is from 5 to 7 inclusive in this case. So the function will need to check if 5, 6 or 7 are prime numbers.
@@ -72,3 +72,14 @@ print(findNestCheckLength(array))
 
 # Input: 10,20
 # Output: [11,13,17,19]
+
+
+# def primeNumbersInRange(a,b):
+x = range(10, 20 + 1)
+for i in x:
+    if i > 1:
+        for j in range(2, i):
+            if i % j == 0:
+                break
+        else:
+            print(i)
