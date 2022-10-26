@@ -74,12 +74,21 @@ import time
 # Output: [11,13,17,19]
 
 
-# def primeNumbersInRange(a,b):
-x = range(10, 20 + 1)
-for i in x:
-    if i > 1:
-        for j in range(2, i):
-            if i % j == 0:
-                break
-        else:
-            print(i)
+num1 = int(input("Enter number: "))
+num2 = int(input("Enter larger number: "))
+
+
+def primeNumbersInRange(a, b):
+    array = []
+    x = range(a, b + 1)
+    for i in x:
+        if i > 1:
+            for j in range(2, i):
+                if i % j == 0:
+                    break
+            else:
+                array.append(i)
+    return array
+
+
+print(primeNumbersInRange(num1, num2))
